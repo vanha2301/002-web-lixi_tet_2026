@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🧧 Lì xì Tết 2026 - Create by Van Ha</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- LEFT: Wheel -->
+    <section class="card">
+      <div class="hero">
+        <div>
+          <h1>🧧 Lì xì Tết 2026 - Create by Van Ha</h1>
+          <div class="muted" id="subtitle">Chạm/click vào <b>vòng</b> để nhận lì xì.</div>
+        </div>
+        <span class="pill" id="statusPill">Sẵn sàng</span>
+      </div>
+
+      <div class="wheelWrap">
+        <div class="pointer" aria-hidden="true"></div>
+        <canvas id="wheel"></canvas>
+      </div>
+
+      <div class="controls">
+        <button id="resetBtn" class="btnReset">Reset</button>
+        <button id="copyBtn" class="btnCopy" disabled>Copy kết quả</button>
+        <span class="pill" id="remainPill">Còn: 0</span>
+      </div>
+
+      <div class="result">
+        <div class="muted">Kết quả gần nhất:</div>
+        <b id="resultText">—</b>
+        <div class="muted" style="margin-top:6px" id="wishText">—</div>
+      </div>
+
+      <div class="muted" style="margin-top:10px">
+        * Mỗi phần thưởng có <b>số lần còn lại</b>. Trúng 1 lần sẽ trừ 1; về 0 sẽ không trúng nữa.
+      </div>
+    </section>
+
+    <!-- RIGHT: Items + History -->
+    <div class="side">
+      <!-- Items editor -->
+      <section class="card">
+        <h2>🎁 Items (sửa / thêm / xóa + số lần còn)</h2>
+        <div class="muted">“Số lần” là số lần tối đa có thể trúng. (Ví dụ 30k = 2)</div>
+
+        <div class="controls" style="margin-top:10px">
+          <input id="newLabel" class="input" style="flex:1" placeholder="Item" />
+          <input id="newRemain" class="input" style="width:120px" type="number" min="0" step="1" placeholder="Số lần" />
+          <button id="addBtn" class="btnOk">Thêm</button>
+          <span class="pill" id="countPill">0 items</span>
+        </div>
+
+        <div class="itemsList" id="itemsList"></div>
+
+        <div class="controls">
+          <button id="resetItemsBtn" class="btnGhost">Reset mặc định</button>
+        </div>
+
+        <div class="muted" style="margin-top:8px">
+          Lưu tự động (localStorage). Reload trang vẫn giữ.
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="card">
+        <h2>🧾 Lịch sử nhận</h2>
+        <div class="muted">Thời gian + phần thưởng + lời chúc + còn lại.</div>
+
+        <div class="controls" style="margin-top:10px">
+          <button id="copyHistoryBtn" class="btnCopy">Copy lịch sử</button>
+          <button id="clearHistoryBtn" class="btnDanger">Xóa lịch sử</button>
+          <span class="pill" id="historyCountPill">0 lượt</span>
+        </div>
+
+        <div class="historyList" id="historyList"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modalBackdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modalBadge">TET 2026</div>
+      <h3>🎉 Bạn nhận được:</h3>
+      <div class="money" id="modalMoney">—</div>
+      <div class="muted" id="modalWish">—</div>
+      <div class="muted" id="modalRemain">—</div>
+      <div class="controls" style="margin-top:12px">
+        <button class="btnOk" id="closeModalBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
