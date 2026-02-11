@@ -13,6 +13,7 @@ const defaultItems = [
 { id: crypto.randomUUID(), label: "50.000đ", remain: 3 },
 { id: crypto.randomUUID(), label: "100.000đ", remain: 2 },
 { id: crypto.randomUUID(), label: "200.000đ", remain: 1 },
+{ id: crypto.randomUUID(), label: "500.000đ", remain: 1 },
 ];
 
 const wishes = [
@@ -491,7 +492,7 @@ function drawWheel(){
 
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = "900 30px system-ui";
+    ctx.font = "900 20px system-ui";
 
     // chọn màu chữ theo độ sáng L
     const tcol = textColorForLightness(L);
@@ -531,19 +532,19 @@ function drawWheel(){
 
   // text center
   ctx.textAlign = "center";
-  ctx.fillStyle = "rgba(255,255,255,.92)";
+  ctx.fillStyle = "rgba(250, 234, 8, 0.92)";
   ctx.font = "900 14px system-ui";
   ctx.fillText("CHẠM", cx, cy-2);
 
-  ctx.fillStyle = "rgba(255,255,255,.72)";
-  ctx.font = "800 12px system-ui";
+  ctx.fillStyle = "rgba(250, 2, 2, 0.72)";
+  ctx.font = "800 18px system-ui";
   ctx.fillText("TẾT 2026", cx, cy+16);
 
   // highlight nhỏ ở trên (cho bóng bẩy)
   ctx.save();
   ctx.globalAlpha = 0.22;
   ctx.beginPath();
-  ctx.arc(cx-12, cy-16, 18, 0, Math.PI*2);
+//   ctx.arc(cx-2, cy, 30, 0, Math.PI*2);
   ctx.fillStyle = "white";
   ctx.fill();
   ctx.restore();
@@ -585,7 +586,7 @@ ctx.strokeStyle = "rgba(255,255,255,.12)";
 ctx.stroke();
 
 ctx.textAlign = "center";
-ctx.fillStyle = "rgba(255,255,255,.92)";
+ctx.fillStyle = "rgba(225, 220, 220, 0.92)";
 ctx.font = "900 14px system-ui";
 ctx.fillText(line1, cx, cy-2);
 

@@ -79,9 +79,9 @@ h2{margin:0 0 10px; font-size:16px}
 }
 .pointer{
     position:absolute;
-    top:4px;
+    top:10px;
     left:50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotate(180deg);
     width:0;height:0;
     border-left: 14px solid transparent;
     border-right:14px solid transparent;
